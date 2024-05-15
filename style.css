@@ -29,10 +29,24 @@ footer{
   width: 50%;
 }
 
-section{
+#leftSection{
   margin-left: 25%;
   margin-top: 10%;
   margin-right: 25%;
+}
+
+.imageContainer{
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  width:25%;
+  height:25%;
+}
+
+img{
+  width:  100%; /*img takes up all of the space inside of the div*/
+  height: 100%;
+  background-size: cover;
 }
 
 input[type="file"] {
@@ -64,5 +78,3 @@ input[type="file"] {
   vertical-align: baseline;
   white-space: nowrap;
 }
-
-
