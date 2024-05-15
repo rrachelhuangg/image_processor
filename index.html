@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Image Processor
+        </title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <section>
+            <div class = "imgContainer">
+                <img src = "imgs/upload.png"id='uploadedPhoto'>
+            </div>
+            <div>
+                <!--display for the input button-->
+                <label for="uploadImage" id="uploadButton"> 
+                    Upload Image
+                </label>
+                <!--renderFile() updates img element below-->
+                <input id="uploadImage" type="file" onchange = 'renderFile()' />
+            </div>
+        </section>
+        
+
+        <script src="data.js"></script> <!--frontend where user inputs data-->
+    </body>
+</html>
