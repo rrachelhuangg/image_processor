@@ -1,51 +1,51 @@
 /* standard elements */
 html {
-  background-color: whitesmoke;
-  margin-left: 10%;
-  margin-right: 10%;
+  background-color: #141619;
   font-family: Didot, serif;
   font-size: 100%
 }
 
 h1{
-  font-size: 3rem;
+  font-size: 1.5rem;
   font-weight: bold;
-  font-family: "Trebuchet MS", "Arial", sans-serif;
-  margin-left: 25%;
-  margin-right: 25%;
-  text-align: center;
+  font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+  margin-left:0.5%;
+  margin-top:1%;
+  text-align: left;
+  color:rgb(180, 180, 180);
 }
 
-footer{
-  margin-top: 10%;
-  border-top: 0.1rem solid slategrey;
-  font-size: 0.8rem;
-}
+#main{ 
+	width:100%; 
+	height:100vh; 
+} 
 
-.center{
-  display:block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
+.left-column{ 
+	float:right; 
+	width: 40%; /*how the columns are split*/ 
+  color:rgb(180, 180, 180);
+  padding-top:3%;
+  margin-right:3%;
+} 
 
-#leftSection{
-  margin-left: 25%;
-  margin-top: 10%;
-  margin-right: 25%;
-}
+.right-column{ 
+	float:right; 
+	width: 40%;
+  color:rgb(180, 180, 180);
+  padding-top:3%;
+} 
 
 .imageContainer{
   display:block;
   margin-left:auto;
   margin-right:auto;
-  width:25%;
-  height:25%;
+  width:20%;
+  height:20%;
 }
 
 img{
-  width:  100%; /*img takes up all of the space inside of the div*/
-  height: 100%;
+  width:  65%; /*img takes up all of the space inside of the div*/
+  height: 65%;
   background-size: cover;
 }
 
@@ -53,7 +53,12 @@ input[type="file"] {
   display: none;
 }
 
-#uploadButton {
+#uploadImage{
+  width:32.15%;
+}
+
+#uploadButton, #removeButton {
+  width:32.15%;
   background-color: #0095ff;
   border: 1px solid transparent;
   border-radius: 3px;
@@ -61,6 +66,30 @@ input[type="file"] {
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.15385;
+  outline: none;
+  padding: 8px .8em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+  margin-bottom:1.5%;
+}
+
+#processedImage {
+  width:65%;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  box-sizing: border-box;
+  color: #fff;
   display: inline-block;
   font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
   font-size: 13px;
@@ -77,4 +106,53 @@ input[type="file"] {
   touch-action: manipulation;
   vertical-align: baseline;
   white-space: nowrap;
+}
+
+footer{
+  margin-top: 10%;
+  border-top: 0.1rem solid slategrey;
+  font-size: 0.8rem;
+}
+
+.processButton{
+  width:65%;
+  cursor: pointer;
+  background-color: #0095ff;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  box-sizing: border-box;
+  color: #fff;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.15385;
+  outline: none;
+  padding: 8px .8em;
+  margin-top:2.5%;
+  margin-left:50%;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+#edButton{
+  background-color:#3eca7a;
+}
+
+#sharpenButton{
+  background-color: #d869ae;
+}
+
+#blurButton{
+  background-color:#c59b5c;
+}
+
+#embossButton{
+  background-color: #e67373;
 }

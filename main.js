@@ -1,4 +1,5 @@
 const uploadButton = document.getElementById("uploadButton")
+const removeButton = document.getElementById("removeButton")
 
 const renderFile = () => {
     const render = document.getElementById('uploadedPhoto')
@@ -13,5 +14,9 @@ const renderFile = () => {
     if(file){
       reader.readAsDataURL(file);
     }
+} 
 
+const removeFile = () => {
+  const render = document.getElementById('uploadedPhoto')
+  render.src = "imgs/upload.png";
 } 
