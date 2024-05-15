@@ -30,26 +30,26 @@
                     <label for="uploadImage" id="uploadButton"> 
                         Upload Image
                     </label>
-                    <!--renderFile() updates img element below-->
+                    <!--renderFile() updates img element above-->
                     <input id="uploadImage" type="file" onchange = 'renderFile()' />
                     <!--removeFile removes the image from the img element-->
                     <button id = "removeButton" onclick = 'removeFile()'>Remove Image</button>
                 </div>
-                <div className = "processButtonContainer">
+                <div>
                     <button class = "processButton" id = "edButton">Edge Detection</button>
                 </div>
-                <div className = "processButtonContainer">
+                <div>
                     <button class = "processButton" id = "sharpenButton">Sharpen</button>
                 </div>
-                <div className = "processButtonContainer">
+                <div>
                     <button class = "processButton" id = "blurButton">Blur</button>
                 </div>
-                <div className = "processButtonContainer">
+                <div>
                     <button class = "processButton" id = "embossButton">Embossing</button>
                 </div>
             </div> 
         </div> 
-
+        <footer>Website created by Rachel Huang</footer>
         <script src="main.js"></script> <!--frontend where user inputs data-->
     </body>
 </html>

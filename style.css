@@ -1,14 +1,13 @@
 /* standard elements */
 html {
   background-color: #141619;
-  font-family: Didot, serif;
+  font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
   font-size: 100%
 }
 
 h1{
   font-size: 1.5rem;
   font-weight: bold;
-  font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
   margin-left:0.5%;
   margin-top:1%;
   text-align: left;
@@ -67,7 +66,6 @@ input[type="file"] {
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
   font-size: 13px;
   font-weight: 400;
   line-height: 1.15385;
@@ -86,32 +84,15 @@ input[type="file"] {
 
 #processedImage {
   width:65%;
-  border: 1px solid transparent;
-  border-radius: 3px;
   box-sizing: border-box;
   color: #fff;
   display: inline-block;
-  font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
   font-size: 13px;
   font-weight: 400;
-  line-height: 1.15385;
-  margin: 0;
   outline: none;
   padding: 8px .8em;
   position: relative;
   text-align: center;
-  text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: baseline;
-  white-space: nowrap;
-}
-
-footer{
-  margin-top: 10%;
-  border-top: 0.1rem solid slategrey;
-  font-size: 0.8rem;
 }
 
 .processButton{
@@ -123,7 +104,6 @@ footer{
   box-sizing: border-box;
   color: #fff;
   display: inline-block;
-  font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
   font-size: 13px;
   font-weight: 400;
   line-height: 1.15385;
@@ -155,4 +135,11 @@ footer{
 
 #embossButton{
   background-color: #e67373;
+}
+
+footer{
+  margin-top: 10%;
+  border-top: 0.1rem solid slategrey;
+  font-size: 0.8rem;
+  color:white;
 }
