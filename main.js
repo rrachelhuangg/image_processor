@@ -17,6 +17,6 @@ const renderFile = () => {
 } 
 
 const removeFile = () => {
-  const render = document.getElementById('uploadedPhoto')
+  const render = document.getElementById('processedPhoto')
   render.src = "imgs/upload.png";
 } 
