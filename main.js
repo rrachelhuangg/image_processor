@@ -45,5 +45,3 @@ const test = () => {
   var image = ctx.getImageData(0, 0, width, height);
   var pix = image.data;
 } 
-
-
