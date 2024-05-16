@@ -17,7 +17,7 @@
                 <div>
                     <!--display for the input button-->
                     <span id = "processedImageLabel">Processed Image</span>
-                    <span><button id = "downloadButton" onclick = 'test()'>Download Image</button></span>
+                    <span><button id = "downloadButton" onclick = 'downloadImage()'>Download Image</button></span>
                 </div>
             </div> 
             <div class="right-column"> 
@@ -35,10 +35,10 @@
                     <button id = "removeButton" onclick = 'removeFile()'>Remove Image</button>
                 </div>
                 <div>
-                    <button class = "processButton" id = "edButton">Edge Detection</button>
+                    <button class = "processButton" id = "edButton" onclick="invert()">Invert</button>
                 </div>
                 <div>
-                    <button class = "processButton" id = "sharpenButton">Sharpen</button>
+                    <button class = "processButton" id = "sharpenButton" onclick = "test()">Test</button>
                 </div>
                 <div>
                     <button class = "processButton" id = "blurButton">Blur</button>
