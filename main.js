@@ -44,7 +44,7 @@ const invert = () => {
   ctx.drawImage(img, 0, 0);
   const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
   const data = imageData.data;
-  console.log(imageData.width);
+  console.log(data.length);
   for(let i = 0; i < data.length; i+=4){
     data[i] = 255-data[i]; //red
     data[i+1] = 255-data[i+1]; //green
@@ -67,16 +67,21 @@ function nbrPixels(pixelIdx, imageData, data){ //gets the neighboring pixels for
 }
 
 function test(){
+  let edKernel = [-1, -1, -1, -1, 8, -1, -1, -1, -1];
   const img = new Image();
   img.crossOrigin = "anonymous";
   img.src = "imgs/dog.jpg";
   var canvas = document.getElementById("canvas");
   var ctx = canvas.getContext('2d');
   ctx.drawImage(img, 0, 0);
-  const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-  const data = imageData.data;
-  for(let i = 0; i < 20; i+=4){ //should test for 5 pixels
-    console.log(nbrPixels(i, imageData, data));
+  var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  var data = imageData.data;
+  for(let i = 0; i < data.length; i+=4){
+    let nbrs = nbrPixels(i, imageData, data);
+    for(let j = 0; j < nbrs.length; j++){
+      data[i] = data[i] + (nbrs[j]*edKernel[j]);
+    }
   }
+  ctx.putImageData(imageData,0, 0);
 }
 
