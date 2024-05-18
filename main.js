@@ -46,7 +46,8 @@ const invert = () => {
   img.src = "imgs/city.png";
   var canvas = document.getElementById("canvas");
   var ctx = canvas.getContext('2d');
-  ctx.drawImage(img, 0, 0);
+  var ratio = Math.min(canvas.width / img.width, canvas.height / img.height);
+  ctx.drawImage(img, 0, 0, img.width*ratio, img.height*ratio);
   const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
   const data = imageData.data;
   console.log(data.length);
@@ -64,7 +65,8 @@ function grayscale(){
   img.src = "imgs/city.jpg";
   var canvas = document.getElementById("canvas");
   var ctx = canvas.getContext("2d");
-  ctx.drawImage(img, 0, 0);
+  var ratio = Math.min(canvas.width / img.width, canvas.height / img.height);
+  ctx.drawImage(img, 0, 0, img.width*ratio, img.height*ratio);
   const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
   const data = imageData.data;
   for (let i = 0; i < data.length; i += 4) {
@@ -95,7 +97,8 @@ function applyKernel(kernel){
   img.src = "imgs/city.jpg";
   var canvas = document.getElementById("canvas");
   var ctx = canvas.getContext("2d");
-  ctx.drawImage(img, 0, 0);
+  var ratio = Math.min(canvas.width / img.width, canvas.height / img.height);
+  ctx.drawImage(img, 0, 0, img.width*ratio, img.height*ratio);
   var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
   var data = imageData.data;
   for(let i = 0; i < data.length; i+=4){
