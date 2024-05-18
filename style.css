@@ -1,8 +1,7 @@
-standard elements
 html {
   background-color: #141619;
   font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
-  font-size: 100%
+  font-size: 100%;
 }
 
 h1{
@@ -11,6 +10,11 @@ h1{
   margin-left:0.5%;
   text-align: left;
   color:rgb(180, 180, 180);
+}
+
+button{
+  background-color: purple;
+  margin-top:1%;
 }
 
 .test{
@@ -24,7 +28,7 @@ h1{
 
 .left-column{ 
 	float:right; 
-	width: 30%; /*how the columns are split*/ 
+	width: 40%; /*how the columns are split*/ 
   color:rgb(180, 180, 180);
   padding-top:3%;
   margin-right:3%;
@@ -32,7 +36,7 @@ h1{
 
 .right-column{ 
 	float:right; 
-	width: 30%;
+	width: 40%;
   color:rgb(180, 180, 180);
   padding-top:3%;
 } 
