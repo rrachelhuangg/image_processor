@@ -43,7 +43,7 @@ function downloadImage(){
 const invert = () => {
   const img = new Image();
   img.crossOrigin = "anonymous";
-  img.src = "imgs/city.png";
+  img.src = "imgs/dog.png";
   var canvas = document.getElementById("canvas");
   var ctx = canvas.getContext('2d');
   var ratio = Math.min(canvas.width / img.width, canvas.height / img.height);
@@ -62,7 +62,7 @@ const invert = () => {
 function grayscale(){
   const img = new Image();
   img.crossOrigin = "anonymous";
-  img.src = "imgs/city.jpg";
+  img.src = "imgs/dog.jpg";
   var canvas = document.getElementById("canvas");
   var ctx = canvas.getContext("2d");
   var ratio = Math.min(canvas.width / img.width, canvas.height / img.height);
@@ -94,7 +94,7 @@ function nbrPixels(pixelIdx, imageData, data){ //idx values of neighboring pixel
 function applyKernel(kernel){
   const img = new Image();
   img.crossOrigin = "anonymous";
-  img.src = "imgs/city.jpg";
+  img.src = "imgs/dog.jpg";
   var canvas = document.getElementById("canvas");
   var ctx = canvas.getContext("2d");
   var ratio = Math.min(canvas.width / img.width, canvas.height / img.height);

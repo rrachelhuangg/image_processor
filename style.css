@@ -82,24 +82,21 @@ input[type="file"] {
   margin-bottom:1.5%;
 }
 
-#processedImage {
-  width:65%;
-  box-sizing: border-box;
-  color: #fff;
-  display: inline-block;
-  font-size: 13px;
-  font-weight: 400;
-  outline: none;
-  padding: 8px .8em;
-  position: relative;
-  text-align: center;
+#uploadButton, #removeButton{
+  margin-top:8.5%;
 }
+
 
 #processedImageLabel{
   margin-left:5.5%;
   margin-right:5.25%;
   margin-top:1%;
   font-size:87.5%;
+}
+
+#canvas{
+  margin:0;
+  padding:0;
 }
 
 .processButton{
@@ -128,15 +125,16 @@ input[type="file"] {
   white-space: nowrap;
 }
 
-#edButton{
+#invertButton{
   background-color:#3eca7a;
+  margin-top:5%;
 }
 
-#sharpenButton{
+#grayscaleButton{
   background-color: #d869ae;
 }
 
-#blurButton{
+#edgeDetectionButton{
   background-color:#c59b5c;
 }
 
