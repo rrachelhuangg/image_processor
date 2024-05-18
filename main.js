@@ -40,6 +40,11 @@ function downloadImage(){
   document.body.removeChild(link);
 }
 
+function setImage(image){
+  const render = document.getElementById('uploadedPhoto')
+  render.src = "imgs/"+image;
+}
+
 const invert = () => {
   const img = new Image();
   img.crossOrigin = "anonymous";

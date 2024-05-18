@@ -1,4 +1,4 @@
-/* standard elements */
+standard elements
 html {
   background-color: #141619;
   font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
@@ -9,9 +9,12 @@ h1{
   font-size: 1.5rem;
   font-weight: bold;
   margin-left:0.5%;
-  margin-top:1%;
   text-align: left;
   color:rgb(180, 180, 180);
+}
+
+.test{
+  background-color: blue;
 }
 
 #main{ 
@@ -21,7 +24,7 @@ h1{
 
 .left-column{ 
 	float:right; 
-	width: 40%; /*how the columns are split*/ 
+	width: 30%; /*how the columns are split*/ 
   color:rgb(180, 180, 180);
   padding-top:3%;
   margin-right:3%;
@@ -29,7 +32,7 @@ h1{
 
 .right-column{ 
 	float:right; 
-	width: 40%;
+	width: 30%;
   color:rgb(180, 180, 180);
   padding-top:3%;
 } 
@@ -145,6 +148,6 @@ input[type="file"] {
 footer{
   margin-top: 10%;
   border-top: 0.1rem solid slategrey;
-  font-size: 0.8rem;
+  font-size: 1rem;
   color:white;
 }
