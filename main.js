@@ -29,9 +29,9 @@ const removeFile = () => {
 } 
 
 function downloadImage(){
-  //need to modify this a bit to download the right imageSrc
   const render = document.getElementById("uploadedPhoto");
-  let imageSrc = render.src.slice(0, 100);
+  var canvas = document.getElementById("canvas");
+  let imageSrc = canvas.toDataURL('image/jpeg', 1);
   const link = document.createElement("a");
   link.href = imageSrc;
   link.download = imageSrc;
