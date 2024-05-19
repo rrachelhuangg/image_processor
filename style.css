@@ -12,13 +12,42 @@ h1{
   color:rgb(180, 180, 180);
 }
 
-button{
-  background-color: purple;
-  margin-top:1%;
+#label{
+  font-size: 1rem;
+  font-weight: bold;
+  margin-left: 0.65%;
+  margin-right: 0.75%;
+  text-align: left;
+  color:rgb(180, 180, 180);
 }
 
-.test{
-  background-color: blue;
+button{
+  margin-top:1%;
+  width:5%;
+  cursor: pointer;
+  background-color: #0095ff;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  box-sizing: border-box;
+  color: #fff;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.15385;
+  outline: none;
+  padding: 0.25% 7.25% 0.25% 3.5%;
+  margin-right: 1.5%;
+  margin-left: 1.5%;
+  position: relative;
+  text-align: center;
+}
+
+#axolotlButton{
+  padding-right:8.5%;
+}
+
+#justiceLeagueButton{
+  padding-right: 11.6%;
 }
 
 #main{ 
@@ -155,3 +184,4 @@ footer{
   font-size: 1rem;
   color:white;
 }
+
