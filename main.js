@@ -43,7 +43,8 @@ function downloadImage(){
 function setImage(image){
   const render = document.getElementById('uploadedPhoto');
   render.src = "imgs/"+image;
-  console.log(render.src.slice(22));
+  console.log("ENTIRE SOURCE: " + render.src);
+  // console.log(render.src.slice(22));
 }
 
 function getImage(){
