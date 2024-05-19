@@ -49,8 +49,8 @@ function setImage(image){
 
 function getImage(){
   const render = document.getElementById('uploadedPhoto');
-  console.log("Get Image SOURCE: " + render.src);
   return render.src.slice(22);
+  console.log("Get Image SOURCE: " + render.src);
 }
 
 const invert = () => {
