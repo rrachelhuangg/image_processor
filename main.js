@@ -51,7 +51,12 @@ function getImage(){
   const render = document.getElementById('uploadedPhoto');
   console.log("Get Image SOURCE: " + render.src);
   console.log("Get sliced image source: " + render.src.slice(22));
-  return render.src.slice(22);
+  if(render.src.slice(22).charAt(0)==="g"){
+    return render.src.slice(22).slice(26);
+  }
+  else{
+    return render.src.slice(22);
+  }
 }
 
 const invert = () => {
