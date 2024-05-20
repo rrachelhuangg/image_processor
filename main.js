@@ -145,3 +145,30 @@ function embossing(){
   applyKernel(embossKernel);
 }
 
+/** */
+const fileInput = document.getElementById("uploadImage");
+fileInput.addEventListener("change", loadImage);
+
+// Function to load image when input changes**
+function loadImage(event) {
+  console.log("In here");
+  const file = event.target.files[0];
+  const image_element = new Image();
+  image_element.onload = function() {
+      const canvas_element = document.getElementById("uploadedPhoto");
+      const context = canvas_element.getContext("2d");
+      canvas_element.width = this.width;
+      canvas_element.height = this.height;
+      context.drawImage(this, 0, 0);
+      var imageData = context.getImageData(0, 0, canvas_element.width, canvas_element.height);
+      var data = imageData.data;
+      for(let i = 0; i < data.length; i+=4){
+          data[i] = 255-data[i];
+          data[i+1] = 255-data[i+1];
+          data[i+2] = 255-data[i+2];
+      }
+      context.putImageData(imageData, 0, 0);
+  };
+  image_element.src = URL.createObjectURL(file);
+}
+

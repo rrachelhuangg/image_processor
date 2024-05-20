@@ -29,17 +29,20 @@
                     <span><button id = "downloadButton" onclick = 'downloadImage()'>Download Image</button></span>
                 </div>
             </div>  
-            <div class="right-column">                 
+            <div class="right-column"> 
                 <div className = "imageContainer">
+                    <canvas id="uploadedPhoto"></canvas>  
+                </div>          
+                <!-- <div className = "imageContainer">
                     <img src = "imgs/upload.png"id='uploadedPhoto'>
-                </div>
+                </div> -->
                 <div>
                     <!--display for the input button-->
                     <label for="uploadImage" id="uploadButton"> 
                         Upload Image
                     </label>
                     <!--renderFile() updates img element above-->
-                    <input id="uploadImage" type="file" onchange = 'renderFile()' />
+                    <input id="uploadImage" type="file"/>
                     <!--removeFile removes the image from the img element-->
                     <button id = "removeButton" onclick = 'removeFile()'>Remove Image</button>
                 </div>
@@ -58,9 +61,7 @@
 
             </div> 
         </div> 
-        <div>
-            <canvas id = "canvas" width = "375%" height = "250%"></canvas>
-        </div>
+
         <footer>Website created by Rachel Huang</footer>
         <script src="main.js"></script> <!--frontend where user inputs data-->
     </body>
