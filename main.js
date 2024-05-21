@@ -34,7 +34,7 @@ function removeFile(){
   console.log("TRYING TO CLEAR");
   const canvas_element = document.getElementById("uploadedPhoto");
   const context = canvas_element.getContext("2d");
-  context.clearRect(0, 0, canvas.width, canvas.height);
+  context.clearRect(0, 0, canvas_element.width, canvas_element.height);
 } 
 
 function downloadImage(){
