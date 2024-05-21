@@ -37,36 +37,36 @@ function removeFile(){
   context.clearRect(0, 0, canvas_element.width, canvas_element.height);
 } 
 
-function downloadImage(){
-  const render = document.getElementById("uploadedPhoto");
-  var canvas = document.getElementById("canvas");
-  let imageSrc = canvas.toDataURL('image/jpeg', 1);
-  const link = document.createElement("a");
-  link.href = imageSrc;
-  link.download = imageSrc;
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-}
+// function downloadImage(){
+//   const render = document.getElementById("uploadedPhoto");
+//   var canvas = document.getElementById("canvas");
+//   let imageSrc = canvas.toDataURL('image/jpeg', 1);
+//   const link = document.createElement("a");
+//   link.href = imageSrc;
+//   link.download = imageSrc;
+//   document.body.appendChild(link);
+//   link.click();
+//   document.body.removeChild(link);
+// }
 
-function setImage(image){
-  const render = document.getElementById('uploadedPhoto');
-  render.src = "imgs/"+image;
-  console.log("ENTIRE SOURCE: " + render.src); //local and pushed sources are different so need to slice differently
-  // console.log(render.src.slice(22));
-}
+// function setImage(image){
+//   const render = document.getElementById('uploadedPhoto');
+//   render.src = "imgs/"+image;
+//   console.log("ENTIRE SOURCE: " + render.src); //local and pushed sources are different so need to slice differently
+//   // console.log(render.src.slice(22));
+// }
 
-function getImage(){
-  const render = document.getElementById('uploadedPhoto');
-  console.log("Get Image SOURCE: " + render.src);
-  console.log("Get sliced image source: " + render.src.slice(22));
-  if(render.src.slice(22).charAt(0)==="g"){
-    return render.src.slice(22).slice(26);
-  }
-  else{
-    return render.src.slice(22);
-  }
-}
+// function getImage(){
+//   const render = document.getElementById('uploadedPhoto');
+//   console.log("Get Image SOURCE: " + render.src);
+//   console.log("Get sliced image source: " + render.src.slice(22));
+//   if(render.src.slice(22).charAt(0)==="g"){
+//     return render.src.slice(22).slice(26);
+//   }
+//   else{
+//     return render.src.slice(22);
+//   }
+// }
 
 const invert = () => {
   const canvas_element = document.getElementById("uploadedPhoto");
