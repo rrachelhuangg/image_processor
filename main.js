@@ -32,9 +32,9 @@ function loadImage(event) {
 
 function removeFile(){
   console.log("TRYING TO CLEAR");
-  // const canvas_element = document.getElementById("uploadedPhoto");
-  // const context = canvas_element.getContext("2d");
-  // context.clearRect(0, 0, canvas.width, canvas.height);
+  const canvas_element = document.getElementById("uploadedPhoto");
+  const context = canvas_element.getContext("2d");
+  context.clearRect(0, 0, canvas.width, canvas.height);
 } 
 
 function downloadImage(){
