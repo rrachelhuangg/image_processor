@@ -31,7 +31,6 @@ function loadImage(event) {
 }
 
 function removeFile(){
-  console.log("TRYING TO CLEAR");
   const canvas_element = document.getElementById("uploadedPhoto");
   const context = canvas_element.getContext("2d");
   context.clearRect(0, 0, canvas_element.width, canvas_element.height);
@@ -49,25 +48,6 @@ function removeFile(){
 //   document.body.removeChild(link);
 // }
 
-// function setImage(image){
-//   const render = document.getElementById('uploadedPhoto');
-//   render.src = "imgs/"+image;
-//   console.log("ENTIRE SOURCE: " + render.src); //local and pushed sources are different so need to slice differently
-//   // console.log(render.src.slice(22));
-// }
-
-// function getImage(){
-//   const render = document.getElementById('uploadedPhoto');
-//   console.log("Get Image SOURCE: " + render.src);
-//   console.log("Get sliced image source: " + render.src.slice(22));
-//   if(render.src.slice(22).charAt(0)==="g"){
-//     return render.src.slice(22).slice(26);
-//   }
-//   else{
-//     return render.src.slice(22);
-//   }
-// }
-
 const invert = () => {
   const canvas_element = document.getElementById("uploadedPhoto");
   const context = canvas_element.getContext("2d");
@@ -81,43 +61,22 @@ const invert = () => {
     data[i+2] = 255-data[i+2];
   }
   cOutput.putImageData(imageData, 0, 0);
-
-
-  // const img = new Image();
-  // img.crossOrigin = "anonymous";
-  // img.src = getImage();
-  // var canvas = document.getElementById("canvas");
-  // var ctx = canvas.getContext('2d');
-  // var ratio = Math.min(canvas.width / img.width, canvas.height / img.height);
-  // ctx.drawImage(img, 0, 0, img.width*ratio, img.height*ratio);
-  // const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-  // const data = imageData.data;
-  // console.log(data.length);
-  // for(let i = 0; i < data.length; i+=4){
-  //   data[i] = 255-data[i]; //red
-  //   data[i+1] = 255-data[i+1]; //green
-  //   data[i+2] = 255-data[i+2]; //blue
-  // }
-  // ctx.putImageData(imageData,0, 0);
 } 
 
 function grayscale(){
-  const img = new Image();
-  img.crossOrigin = "anonymous";
-  img.src = getImage();
-  var canvas = document.getElementById("canvas");
-  var ctx = canvas.getContext("2d");
-  var ratio = Math.min(canvas.width / img.width, canvas.height / img.height);
-  ctx.drawImage(img, 0, 0, img.width*ratio, img.height*ratio);
-  const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-  const data = imageData.data;
+  const canvas_element = document.getElementById("uploadedPhoto");
+  const context = canvas_element.getContext("2d");
+  const output = document.getElementById("canvas");
+  const cOutput = output.getContext("2d");
+  var imageData = context.getImageData(0, 0, canvas_element.width, canvas_element.height);
+  var data = imageData.data;
   for (let i = 0; i < data.length; i += 4) {
     const avg = (data[i] + data[i + 1] + data[i + 2]) / 3;
     data[i] = avg; // red
     data[i + 1] = avg; // green
     data[i + 2] = avg; // blue
   }
-  ctx.putImageData(imageData, 0, 0);
+  cOutput.putImageData(imageData, 0, 0);  
 }
 
 function nbrPixels(pixelIdx, imageData, data){ //idx values of neighboring pixels
@@ -134,14 +93,11 @@ function nbrPixels(pixelIdx, imageData, data){ //idx values of neighboring pixel
 }
 
 function applyKernel(kernel){
-  const img = new Image();
-  img.crossOrigin = "anonymous";
-  img.src = getImage();
-  var canvas = document.getElementById("canvas");
-  var ctx = canvas.getContext("2d");
-  var ratio = Math.min(canvas.width / img.width, canvas.height / img.height);
-  ctx.drawImage(img, 0, 0, img.width*ratio, img.height*ratio);
-  var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  const canvas_element = document.getElementById("uploadedPhoto");
+  const context = canvas_element.getContext("2d");
+  const output = document.getElementById("canvas");
+  const cOutput = output.getContext("2d");
+  var imageData = context.getImageData(0, 0, canvas_element.width, canvas_element.height);
   var data = imageData.data;
   for(let i = 0; i < data.length; i+=4){
     let nbrIdxs = nbrPixels(i, imageData, data);
@@ -155,7 +111,7 @@ function applyKernel(kernel){
       data[i+2] = data[i+2] + (data[nbrIdx+2] * kernel[n]);
     }
   }
-  ctx.putImageData(imageData, 0, 0);
+  cOutput.putImageData(imageData, 0, 0); 
 }
 
 function edgeDetection(){ 
