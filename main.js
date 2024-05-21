@@ -15,17 +15,7 @@ function loadImage(event) {
   image_element.onload = function() {
       const canvas_element = document.getElementById("uploadedPhoto");
       const context = canvas_element.getContext("2d");
-      canvas_element.width = this.width;
-      canvas_element.height = this.height;
       context.drawImage(this, 0, 0);
-      var imageData = context.getImageData(0, 0, canvas_element.width, canvas_element.height);
-      var data = imageData.data;
-      for(let i = 0; i < data.length; i+=4){
-          data[i] = 255-data[i];
-          data[i+1] = 255-data[i+1];
-          data[i+2] = 255-data[i+2];
-      }
-      context.putImageData(imageData, 0, 0);
   };
   image_element.src = URL.createObjectURL(file);
 }
