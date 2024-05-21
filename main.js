@@ -69,9 +69,6 @@ function getImage(){
 }
 
 const invert = () => {
-  const img = new Image();
-  img.crossOrigin = "anonymous";
-  img.src = getImage();
   const canvas_element = document.getElementById("uploadedPhoto");
   const context = canvas_element.getContext("2d");
   const output = document.getElementById("canvas");
