@@ -72,19 +72,36 @@ const invert = () => {
   const img = new Image();
   img.crossOrigin = "anonymous";
   img.src = getImage();
-  var canvas = document.getElementById("canvas");
-  var ctx = canvas.getContext('2d');
-  var ratio = Math.min(canvas.width / img.width, canvas.height / img.height);
-  ctx.drawImage(img, 0, 0, img.width*ratio, img.height*ratio);
-  const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-  const data = imageData.data;
-  console.log(data.length);
+  const canvas_element = document.getElementById("uploadedPhoto");
+  const context = canvas_element.getContext("2d");
+  const output = document.getElementById("canvas");
+  const cOutput = output.getContext("2d");
+  var imageData = context.getImageData(0, 0, canvas_element.width, canvas_element.height);
+  var data = imageData.data;
   for(let i = 0; i < data.length; i+=4){
-    data[i] = 255-data[i]; //red
-    data[i+1] = 255-data[i+1]; //green
-    data[i+2] = 255-data[i+2]; //blue
+    data[i] = 255-data[i];
+    data[i+1] = 255-data[i+1];
+    data[i+2] = 255-data[i+2];
   }
-  ctx.putImageData(imageData,0, 0);
+  cOutput.putImageData(imageData, 0, 0);
+
+
+  // const img = new Image();
+  // img.crossOrigin = "anonymous";
+  // img.src = getImage();
+  // var canvas = document.getElementById("canvas");
+  // var ctx = canvas.getContext('2d');
+  // var ratio = Math.min(canvas.width / img.width, canvas.height / img.height);
+  // ctx.drawImage(img, 0, 0, img.width*ratio, img.height*ratio);
+  // const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  // const data = imageData.data;
+  // console.log(data.length);
+  // for(let i = 0; i < data.length; i+=4){
+  //   data[i] = 255-data[i]; //red
+  //   data[i+1] = 255-data[i+1]; //green
+  //   data[i+2] = 255-data[i+2]; //blue
+  // }
+  // ctx.putImageData(imageData,0, 0);
 } 
 
 function grayscale(){
