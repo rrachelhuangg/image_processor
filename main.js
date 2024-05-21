@@ -4,28 +4,37 @@
 //https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Pixel_manipulation_with_canvas
 //https://stackoverflow.com/questions/17764012/image-being-clipped-when-copied-to-html-canvas-using-drawimage
 //
-const uploadButton = document.getElementById("uploadButton")
-const removeButton = document.getElementById("removeButton")
+/** */
+const fileInput = document.getElementById("uploadImage");
+fileInput.addEventListener("change", loadImage);
 
-const renderFile = () => {
-    const render = document.getElementById('uploadedPhoto')
-    const file = document.querySelector('input[type=file]').files[0]
-    const reader = new FileReader();
-    
-    reader.addEventListener('load' , ()=> {
-      render.src = reader.result;
-    }, false)
-  
-    //file.name is the file name
-    if(file){
-      reader.readAsDataURL(file);
-    }
+// Function to load image when input changes**
+function loadImage(event) {
+  const file = event.target.files[0];
+  const image_element = new Image();
+  image_element.onload = function() {
+      const canvas_element = document.getElementById("uploadedPhoto");
+      const context = canvas_element.getContext("2d");
+      canvas_element.width = this.width;
+      canvas_element.height = this.height;
+      context.drawImage(this, 0, 0);
+      var imageData = context.getImageData(0, 0, canvas_element.width, canvas_element.height);
+      var data = imageData.data;
+      for(let i = 0; i < data.length; i+=4){
+          data[i] = 255-data[i];
+          data[i+1] = 255-data[i+1];
+          data[i+2] = 255-data[i+2];
+      }
+      context.putImageData(imageData, 0, 0);
+  };
+  image_element.src = URL.createObjectURL(file);
+}
 
-} 
-
-const removeFile = () => {
-  const render = document.getElementById('uploadedPhoto')
-  render.src = "imgs/upload.png";
+function removeFile(){
+  console.log("TRYING TO CLEAR");
+  // const canvas_element = document.getElementById("uploadedPhoto");
+  // const context = canvas_element.getContext("2d");
+  // context.clearRect(0, 0, canvas.width, canvas.height);
 } 
 
 function downloadImage(){
@@ -145,30 +154,5 @@ function embossing(){
   applyKernel(embossKernel);
 }
 
-/** */
-const fileInput = document.getElementById("uploadImage");
-fileInput.addEventListener("change", loadImage);
 
-// Function to load image when input changes**
-function loadImage(event) {
-  console.log("In here");
-  const file = event.target.files[0];
-  const image_element = new Image();
-  image_element.onload = function() {
-      const canvas_element = document.getElementById("uploadedPhoto");
-      const context = canvas_element.getContext("2d");
-      canvas_element.width = this.width;
-      canvas_element.height = this.height;
-      context.drawImage(this, 0, 0);
-      var imageData = context.getImageData(0, 0, canvas_element.width, canvas_element.height);
-      var data = imageData.data;
-      for(let i = 0; i < data.length; i+=4){
-          data[i] = 255-data[i];
-          data[i+1] = 255-data[i+1];
-          data[i+2] = 255-data[i+2];
-      }
-      context.putImageData(imageData, 0, 0);
-  };
-  image_element.src = URL.createObjectURL(file);
-}
 
