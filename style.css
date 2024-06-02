@@ -159,8 +159,8 @@ footer{
 }
 
 .imageContainer{
-  position: absolute;
-  max-width: 1000px;
+  height: 100px;
+  width: 500px;
+  background-color: powderblue;
 }
-
 
