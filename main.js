@@ -9,6 +9,9 @@ function loadImage(event) {
   image_element.onload = function() {
       const canvas = document.getElementById("uploadedPhoto");
       const context = canvas.getContext("2d");
+      var parent = document.getElementById("parent");
+      canvas.width = parent.offsetWidth;
+      canvas.height = parent.offsetHeight;
       context.clearRect(0, 0, canvas.width, canvas.height);
       var hRatio = canvas.width / this.width;
       var vRatio = canvas.height / this.height;
