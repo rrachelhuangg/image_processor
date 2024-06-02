@@ -2,7 +2,7 @@
 const fileInput = document.getElementById("uploadImage");
 fileInput.addEventListener("change", loadImage);
 
-// Function to load image when input changes**
+// Function to load image when input changes
 function loadImage(event) {
   const file = event.target.files[0];
   const image_element = new Image();
