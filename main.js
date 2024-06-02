@@ -9,12 +9,17 @@ function loadImage(event) {
   image_element.onload = function() {
       const canvas = document.getElementById("uploadedPhoto");
       const context = canvas.getContext("2d");
-      var ratio = this.naturalWidth / this.naturalHeight;
-      console.log("CANVAS WIDTH: ", canvas.width, "CANVAS HEIGHT: ", canvas.height);
-      var width = canvas.width;
-      var height = width / ratio;
-      context.drawImage(this, 0, 0, width, height);
-      //context.drawImage(this, 0, 0);
+
+      var hRatio = canvas.width / this.width;
+      var vRatio = canvas.height / this.height;
+      var ratio  = Math.min ( hRatio, vRatio );
+      context.drawImage(this, 0,0, this.width, this.height, 0,0,this.width*ratio, this.height*ratio);
+
+      // var ratio = this.naturalWidth / this.naturalHeight;
+      // console.log("CANVAS WIDTH: ", canvas.width, "CANVAS HEIGHT: ", canvas.height);
+      // var width = canvas.width;
+      // var height = width / ratio;
+      // context.drawImage(this, 0, 0, width, height);
   };
   image_element.src = URL.createObjectURL(file);
 }
