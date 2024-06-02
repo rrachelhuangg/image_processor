@@ -157,3 +157,9 @@ footer{
   font-size: 1rem;
   color:white;
 }
+
+.imageContainer{
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+}
