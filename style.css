@@ -159,5 +159,6 @@ footer{
 }
 
 .imageContainer{
-  padding-left:5%;
+  align-items: center;
+  justify-content: center;
 }
