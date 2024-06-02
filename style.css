@@ -158,7 +158,8 @@ footer{
   color:white;
 }
 
-/* .imageContainer{
-
-} */
+.imageContainer{
+  height:1000px;
+  width: 1000px;
+}
 
