@@ -1,10 +1,4 @@
-// python -m http.server
-//https://blog.j2i.net/2017/11/25/kernel-filters-in-htmljavascript/
-//https://stackoverflow.com/questions/70221084/solved-get-neighboring-pixels-from-linear-array-as-in-context-getimagedata
-//https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Pixel_manipulation_with_canvas
-//https://stackoverflow.com/questions/17764012/image-being-clipped-when-copied-to-html-canvas-using-drawimage
-//
-/** */
+// python -m http.server: for bypassing CORS protocol on browsers
 const fileInput = document.getElementById("uploadImage");
 fileInput.addEventListener("change", loadImage);
 
@@ -13,9 +7,14 @@ function loadImage(event) {
   const file = event.target.files[0];
   const image_element = new Image();
   image_element.onload = function() {
-      const canvas_element = document.getElementById("uploadedPhoto");
-      const context = canvas_element.getContext("2d");
-      context.drawImage(this, 0, 0);
+      const canvas = document.getElementById("uploadedPhoto");
+      const context = canvas.getContext("2d");
+      var ratio = this.naturalWidth / this.naturalHeight;
+      console.log("CANVAS WIDTH: ", canvas.width, "CANVAS HEIGHT: ", canvas.height);
+      var width = canvas.width;
+      var height = width / ratio;
+      context.drawImage(this, 0, 0, width, height);
+      //context.drawImage(this, 0, 0);
   };
   image_element.src = URL.createObjectURL(file);
 }
@@ -26,17 +25,15 @@ function removeFile(){
   context.clearRect(0, 0, canvas_element.width, canvas_element.height);
 } 
 
-// function downloadImage(){
-//   const render = document.getElementById("uploadedPhoto");
-//   var canvas = document.getElementById("canvas");
-//   let imageSrc = canvas.toDataURL('image/jpeg', 1);
-//   const link = document.createElement("a");
-//   link.href = imageSrc;
-//   link.download = imageSrc;
-//   document.body.appendChild(link);
-//   link.click();
-//   document.body.removeChild(link);
-// }
+function downloadImage(){
+  let imageSrc = document.getElementById("canvas").toDataURL('image/jpeg', 1);
+  const link = document.createElement("a");
+  link.href = imageSrc;
+  link.download = imageSrc;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
 
 const invert = () => {
   const canvas_element = document.getElementById("uploadedPhoto");

@@ -42,13 +42,13 @@ button{
   text-align: center;
 }
 
-#axolotlButton{
+/* #axolotlButton{
   padding-right:8.5%;
 }
 
 #justiceLeagueButton{
   padding-right: 11.6%;
-}
+} */
 
 #main{ 
 	width:100%; 
@@ -69,20 +69,6 @@ button{
   color:rgb(180, 180, 180);
   padding-top:3%;
 } 
-
-.imageContainer{
-  display:block;
-  margin-left:auto;
-  margin-right:auto;
-  width:20%;
-  height:20%;
-}
-
-img{
-  width:  65%; /*img takes up all of the space inside of the div*/
-  height: 65%;
-  background-size: cover;
-}
 
 input[type="file"] {
   display: none;
@@ -128,11 +114,6 @@ input[type="file"] {
   margin-right:5.25%;
   margin-top:1%;
   font-size:87.5%;
-}
-
-#canvas{
-  margin:0;
-  padding:0;
 }
 
 .processButton{
@@ -185,10 +166,25 @@ footer{
   color:white;
 }
 
-#uploadedPhoto{
+/* #uploadedPhoto{
   max-width:55%;
   padding: 0;
   margin-left:6%;
   display: block;
   height:100%;
+} */
+
+/* 
+#canvas{
+  margin:0;
+  padding:0;
+} */
+
+.imageContainer{
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  /* width:20%;
+  height:20%; */
 }
+
