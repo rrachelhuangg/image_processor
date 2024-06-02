@@ -13,7 +13,7 @@ function loadImage(event) {
       var hRatio = canvas.width / this.width;
       var vRatio = canvas.height / this.height;
       var ratio  = Math.min ( hRatio, vRatio );
-      context.drawImage(this, this.width/2, this.height/2, this.width, this.height, (this.width*ratio)/2, (this.height*ratio)/2,this.width*ratio, this.height*ratio);
+      context.drawImage(this, this.width/2,this.height/2, this.width, this.height, this.width/2,this.height/2,this.width*ratio, this.height*ratio);
   };
   image_element.src = URL.createObjectURL(file);
 }
